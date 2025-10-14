@@ -403,7 +403,7 @@ export default function EditLeadPage() {
         contactPerson: '',
         phone: '',
         email: '',
-        productDeliveryStatus: '',
+        productDeliveryStatus: 'Order Placed',
     }}]);
   };
 

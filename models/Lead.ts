@@ -240,6 +240,7 @@ const LeadProductSchema = new Schema<ILeadProduct>({
     contactPerson: String,
     phone: String,
     email: String,
+    productDeliveryStatus: String,
   },
 });
 
@@ -376,8 +377,7 @@ LeadSchema.pre('save', function (next) {
   next();
 });
 
-LeadSchema.index({ leadId: 1 });
-LeadSchema.index({ leadNumber: 1 });
+
 LeadSchema.index({ status: 1 });
 LeadSchema.index({ assignedAgent: 1 });
 LeadSchema.index({ customerEmail: 1 });

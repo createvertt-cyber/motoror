@@ -138,7 +138,7 @@ export default function NewLeadPage() {
       contactPerson: '',
       phone: '',
       email: '',
-      productDeliveryStatus: 'Order Placed',
+        productDeliveryStatus: 'Order Placed',
     }
   }]);
 
@@ -249,7 +249,7 @@ export default function NewLeadPage() {
         contactPerson: '',
         phone: '',
         email: '',
-        productDeliveryStatus: '',
+        productDeliveryStatus: 'Order Placed',
     }}]);
   };
 
@@ -1276,15 +1276,13 @@ export default function NewLeadPage() {
                             className="mt-1"
                           />
                         </div>
-                          {/* --- NEW CODE: Product Delivery Status --- */}
                         <div>
                             <Label htmlFor={`productDeliveryStatus-${index}`}>Product Delivery Status</Label>
                             <select
                                 id={`productDeliveryStatus-${index}`}
                                 name="productDeliveryStatus"
-                                // ... (rest of attributes)
+                                className="mt-1 w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
                                 value={product.vendorInfo.productDeliveryStatus}
-                                // 💡 FIX: Ensure the update function correctly targets the nested path 'vendorInfo.productDeliveryStatus'
                                 onChange={(e) => updateProduct(index, 'vendorInfo.productDeliveryStatus', e.target.value)}
                             >
                                 {PRODUCT_DELIVERY_STATUS_OPTIONS.map((status) => (
